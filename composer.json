@@ -1,0 +1,13 @@
+{
+    "name": "stkevich/blog",
+    "description": "Simple domain model for blog",
+    "authors": [
+        {
+            "name": "Stas Kevich",
+            "email": "st.kevich@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "7.1.0"
+    }
+}
