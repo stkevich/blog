@@ -1,11 +1,14 @@
-##Hello!
+Hello!
+==================
 This is a base ddd model for simple cqrs blog project. 
 
-##Attention!
+Attention!
+-----
 * This project is for educational purposes only.
 * If you think this is a bad example, welcome to Issues.
 
-##Plans
+Plans
+-----
 1) Added repository implementations
 2) Added base CQRS realisation
 
