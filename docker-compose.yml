@@ -1,0 +1,8 @@
+version: "3"
+services:
+
+  backend:
+    build: ./docker/php
+    user: $UID
+    volumes:
+      - $PWD/:/var/www/html

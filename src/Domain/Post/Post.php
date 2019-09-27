@@ -27,7 +27,10 @@ class Post
     protected $fullText;
 
     /** @var Author */
-    protected $author;
+    protected $authorInfo;
+
+    /** @var int */
+    protected $authorId;
 
     /** @var Rating */
     protected $rating;
@@ -38,7 +41,7 @@ class Post
      * @param string $slug
      * @param string $description
      * @param string $fullText
-     * @param Author $author
+     * @param int $authorId
      * @param Rating $rating
      */
     public function __construct(
@@ -46,14 +49,14 @@ class Post
         string $slug,
         string $description,
         string $fullText,
-        Author $author,
+        int $authorId,
         Rating $rating
     ) {
         $this->title = $title;
         $this->slug = $slug;
         $this->description = $description;
         $this->fullText = $fullText;
-        $this->author = $author;
+        $this->authorId = $authorId;
         $this->rating = $rating;
     }
 
@@ -108,11 +111,11 @@ class Post
     }
 
     /**
-     * @return Author
+     * @return int
      */
-    public function getAuthor(): Author
+    public function getAuthorId(): int
     {
-        return $this->author;
+        return $this->authorId;
     }
 
     /**
@@ -121,6 +124,22 @@ class Post
     public function getRating(): Rating
     {
         return $this->rating;
+    }
+
+    /**
+     * @return Author
+     */
+    public function getAuthorInfo(): Author
+    {
+        return $this->authorInfo;
+    }
+
+    /**
+     * @param Author $authorInfo
+     */
+    public function setAuthorInfo(Author $authorInfo): void
+    {
+        $this->authorInfo = $authorInfo;
     }
 
 }
