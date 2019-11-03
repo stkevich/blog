@@ -3,6 +3,7 @@
 namespace StKevich\Blog\Domain\Comment;
 
 use StKevich\Blog\Domain\Comment\ValueObject\Author;
+use StKevich\Blog\Domain\Comment\ValueObject\Rating;
 
 /**
  * Class Comment
@@ -22,17 +23,22 @@ class Comment
     /** @var string */
     protected $text;
 
+    /** @var Rating */
+    protected $rating;
+
     /**
      * Comment constructor.
      * @param int $postId
      * @param Author $author
      * @param string $text
+     * @param Rating $rating
      */
-    public function __construct(int $postId, Author $author, string $text)
+    public function __construct(int $postId, Author $author, string $text, Rating $rating)
     {
         $this->postId = $postId;
         $this->author = $author;
         $this->text = $text;
+        $this->rating = $rating;
     }
 
     /**
@@ -73,6 +79,14 @@ class Comment
     public function getText(): string
     {
         return $this->text;
+    }
+
+    /**
+     * @return Rating
+     */
+    public function getRating(): Rating
+    {
+        return $this->rating;
     }
 
 }

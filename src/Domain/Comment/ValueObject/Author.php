@@ -2,14 +2,14 @@
 
 namespace StKevich\Blog\Domain\Comment\ValueObject;
 
-use StKevich\Blog\Domain\Post\ValueObject\Rating;
-
 /**
  * Class Author
  * @package StKevich\Blog\Domain\Comment\ValueObject
  */
 class Author
 {
+    /** @var int */
+    protected $id;
 
     /** @var string */
     protected $name;
@@ -22,15 +22,25 @@ class Author
 
     /**
      * Author constructor.
+     * @param int $id
      * @param string $name
      * @param Rating $rating
      * @param string $thumbnail
      */
-    public function __construct(string $name, Rating $rating, string $thumbnail)
+    public function __construct(int $id, string $name, Rating $rating, string $thumbnail)
     {
+        $this->id = $id;
         $this->name = $name;
         $this->rating = $rating;
         $this->thumbnail = $thumbnail;
+    }
+
+    /**
+     * @return int
+     */
+    public function getId(): int
+    {
+        return $this->id;
     }
 
     /**
