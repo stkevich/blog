@@ -25,9 +25,9 @@ class Author
      * @param int $id
      * @param string $name
      * @param Rating $rating
-     * @param string $thumbnail
+     * @param string|null $thumbnail
      */
-    public function __construct(int $id, string $name, Rating $rating, string $thumbnail)
+    public function __construct(int $id, string $name, Rating $rating, string $thumbnail = null)
     {
         $this->id = $id;
         $this->name = $name;
@@ -62,7 +62,7 @@ class Author
     /**
      * @return string
      */
-    public function getThumbnail(): string
+    public function getThumbnail(): ?string
     {
         return $this->thumbnail;
     }

@@ -22,10 +22,10 @@ interface CommentRepositoryInterface
     public function getByUrl(string $url): Comment;
 
     /**
-     * @param PostSpecificationInterface $spec
+     * @param CommentSpecificationInterface $spec
      * @return CommentCollection
      */
-    public function find(PostSpecificationInterface $spec): CommentCollection;
+    public function find(CommentSpecificationInterface $spec): CommentCollection;
 
     /**
      * @param Comment $post

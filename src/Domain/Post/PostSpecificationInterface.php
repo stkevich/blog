@@ -2,6 +2,8 @@
 
 namespace StKevich\Blog\Domain\Post;
 
+use StKevich\Blog\Infrastructures\ExpressionTree\ExpressionInterface;
+
 /**
  * Interface CommentSpecificationInterface
  * @package StKevich\Blog\Domain\Comment
@@ -18,6 +20,6 @@ interface PostSpecificationInterface
     /**
      * @return mixed
      */
-    public function toExpression();
+    public function toExpression(): ExpressionInterface;
 
 }
