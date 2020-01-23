@@ -9,14 +9,15 @@ namespace StKevich\Blog\Infrastructures;
 abstract class Collection implements \Iterator, \Countable
 {
     /** @var mixed[] */
-    protected $items;
+    protected array $items = [];
 
     /**
      * @return mixed
      */
     public function current()
     {
-        return current($this->items);
+        $current = current($this->items);
+        return $current ? $current : null;
     }
 
     /**
@@ -24,7 +25,8 @@ abstract class Collection implements \Iterator, \Countable
      */
     public function next()
     {
-        return next($this->items);
+        $next = next($this->items);
+        return $next ? $next : null;
     }
 
     /**
@@ -58,6 +60,14 @@ abstract class Collection implements \Iterator, \Countable
     public function rewind()
     {
         reset($this->items);
+    }
+
+    /**
+     * @param $item
+     */
+    protected function protectedAdd($item)
+    {
+        $this->items[] = $item;
     }
 
 }

@@ -13,7 +13,8 @@
       }
     },
     "require": {
-        "php": ">=7.3.0"
+        "php": ">=7.4.0",
+        "stkevich/php-expression": "v0.1"
     },
     "require-dev": {
         "phpunit/phpunit": "^8.3"

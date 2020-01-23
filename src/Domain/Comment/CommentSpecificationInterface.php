@@ -2,7 +2,7 @@
 
 namespace StKevich\Blog\Domain\Comment;
 
-use StKevich\Blog\Infrastructures\ExpressionTree\ExpressionInterface;
+use StKevich\ExpressionTree\ExpressionInterface;
 
 /**
  * Interface CommentSpecificationInterface

@@ -3,8 +3,8 @@
 namespace StKevich\Blog\Tests\Domain;
 
 use PHPUnit\Framework\TestCase;
-use StKevich\Blog\Domain\Comment\ValueObject\Author;
 use StKevich\Blog\Domain\Post\Post;
+use StKevich\Blog\Domain\Post\ValueObject\Author;
 use StKevich\Blog\Domain\Post\ValueObject\Rating;
 
 final class PostTest extends TestCase
@@ -17,7 +17,7 @@ final class PostTest extends TestCase
             'slug',
             'Description',
             'Full text',
-            10,
+            new Author(1, 'PutIn', new Rating(10,0,0), null),
             new Rating(
                 5,
                 10,
@@ -29,7 +29,6 @@ final class PostTest extends TestCase
         $this->assertEquals('slug', $post->getSlug());
         $this->assertEquals('Description', $post->getDescription());
         $this->assertEquals('Full text', $post->getFullText());
-        $this->assertEquals(10, $post->getAuthorId());
         $this->assertEquals(5, $post->getRating()->getLike());
         $this->assertEquals(10, $post->getRating()->getDislike());
         $this->assertEquals(0, $post->getRating()->getFun());

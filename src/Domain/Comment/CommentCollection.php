@@ -10,33 +10,30 @@ use StKevich\Blog\Infrastructures\Collection;
  */
 class CommentCollection extends Collection
 {
-    /** @var Comment[] */
-    protected $items;
-
     /**
      * @param Comment $item
      * @return $this;
      */
     public function add(Comment $item)
     {
-        $this->items[] = $item;
+        $this->protectedAdd($item);
         return $this;
     }
 
     /**
      * @return Comment
      */
-    public function current(): Comment
+    public function current(): ?Comment
     {
-        return current($this->items);
+        return parent::current();
     }
 
     /**
      * @return Comment
      */
-    public function next(): Comment
+    public function next(): ?Comment
     {
-        return next($this->items);
+        return parent::next();
     }
 
 }
