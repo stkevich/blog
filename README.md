@@ -12,3 +12,6 @@ Plans
 1) Added repository implementations
 2) Added base CQRS realisation
 
+
+
+[![codecov](https://codecov.io/gh/stkevich/blog/branch/master/graph/badge.svg)](https://codecov.io/gh/stkevich/blog)
